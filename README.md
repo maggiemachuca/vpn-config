@@ -1,3 +1,28 @@
+This tutorial demonstrates how to observe and compare public IP addresses when accessing the internet from your personal machine, an Azure-hosted virtual machine, and a VPN-connected environment. It provides a hands-on approach to understanding IP masking and how VPNs protect online identity and location.
+
+<h1>VPN Tunnel Demonstration Using Azure VM</h1>
+
+<h2>Environments and Technologies Used</h2>
+
+- Microsoft Azure
+- Azure Virtual Machine
+- Remote Desktop Protocol via Windows App
+- VPN Tool: ProtonVPN (free version)
+- Web Tools: https://whatismyipaddress.com/
+- Command Line Tool: nslookup myip.opendns.com resolver1.opendns.com (for IP check via Command Prompt)
+
+<h2>Operating Systems Used </h2>
+
+- Windows 10 (22H2)
+
+<h2>High-Level Deployment and Configuration Steps</h2>
+
+- Create a Windows 10 VM in Azure
+- Check IP Address of Host Machine (Local Computer)
+- Connect to VM using Remote Desktop App
+- Download and Install ProtonVPN Inside the VM
+- Connect to VPN and Recheck IP
+- (Optional): Verified IP using Command Prompt
 
 ## Step 1: Create a Virtual Machine in Azure
 - Let's create a Windows 10 virtual machine so we can use it to log into in a later step.
@@ -14,7 +39,7 @@
 
 <img width="1195" height="472" alt="Screenshot 2025-09-25 at 9 26 20 PM" src="https://github.com/user-attachments/assets/8ecbaac6-f2ca-426a-afc4-034c3a680147" />
 
-## Step 3: IP Address from VM
+## Step 3: Observe IP Address from VM
 - Log into your Windows Virtual Machine
 - Go to https://whatismyipaddress.com/
 - Observe the different IP address that is shown when you are connected to your VM
@@ -52,7 +77,7 @@
 
 <img width="1437" height="850" alt="Screenshot 2025-09-25 at 10 11 59 PM" src="https://github.com/user-attachments/assets/05f7b998-89d4-4db8-b3d5-ba93c32cdb28" />
 
-## Step 3: IP Address from VM (VPN connection)
+## Step 3: Observe IP Address from VM (VPN connection)
 - Go to https://whatismyipaddress.com/ from your VM **with the VPN connection** you just made.
 - Observe the different IP address that is shown when you connected through a VPN
 
@@ -72,5 +97,14 @@
 
 <img width="227" height="63" alt="Screenshot 2025-09-25 at 10 24 46 PM" src="https://github.com/user-attachments/assets/72d4fcb9-1e49-45fe-ae72-25975ac7baa3" />
 
+## Summary:
+- Created a Windows 10 virtual machine in Azure for testing IP visibility in different network conditions.
 
+- Verified the public IP address of the local computer without a VPN using an external lookup tool.
+
+- Remotely connected to the VM via Remote Desktop Protocol (RDP) and observed the VM's public IP (from Azure's data center).
+
+- Installed and configured ProtonVPN inside the VM, then rechecked the IP to confirm it changed to reflect the VPN server's location.
+
+- Compared all three scenarios to understand how IP addresses change across local, cloud, and VPN-based access.
 
